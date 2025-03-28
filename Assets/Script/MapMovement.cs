@@ -2,40 +2,29 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 
+
 public class MapMovement : MonoBehaviour
 {
    
     [SerializeField] private GameObject ActiveMap;
-    InputAction FlipMap;
-    private float RotateSpeed=1f;
+    private float RotateSpeed=20f,ReverseRange=-1f,ReverseDelay=30f,CurrentDelay=0f;
 
-    public void Start()
+    void Start()
     {
 
-        FlipMap=InputSystem.actions.FindAction("Flip");
         Input.gyro.enabled=true;
-
-        /*if(!UnityEngine.InputSystem.Gyroscope.current.enabled)
-            InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
-
-        //FlipMap=new InputAction();
-        FlipMap.AddBinding("<Sensor>/Gyroscope");
-        FlipMap.Enable();*/
-
-    }
-
-    public void OnDisable()
-    {
-
-        FlipMap.Disable();
+        Debug.Log(Input.gyro.enabled);
 
     }
 
     public void Update()
     {
 
-        Flip(FlipMap.ReadValue<Vector2>()*Time.deltaTime*RotateSpeed);
-        Flip(Input.gyro.attitude.ToEulerAngles()*Time.deltaTime*RotateSpeed); //X is Up and Down - 
+        Input.gyro.enabled=true;
+        Flip(Input.gyro.enabled ? Input.gyro.rotationRateUnbiased*Time.deltaTime*RotateSpeed : Vector3.zero); //X is Up and Down - 
+
+        if(CurrentDelay>0)
+            CurrentDelay--;
 
     }
 
@@ -44,22 +33,17 @@ public class MapMovement : MonoBehaviour
     {
 
         ActiveMap.transform.Rotate(0,180,180);
+        CurrentDelay=ReverseDelay;
 
     }
 
     public void Flip(Vector3 InputValue)
     {
 
-        ActiveMap.transform.Rotate(0,0,InputValue.y);
+        ActiveMap.transform.Rotate(0,0,InputValue.z);
 
-    }
-
-    [ContextMenu("Flip")]
-    public void Flip()
-    {
-
-        Vector3 Angle=new Vector3(0,0,5);
-        ActiveMap.transform.Rotate(Angle);
+        if(InputValue.x<ReverseRange && CurrentDelay<=0)
+            Reverse();
 
     }
 
