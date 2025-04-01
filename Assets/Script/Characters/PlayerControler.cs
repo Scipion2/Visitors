@@ -8,8 +8,8 @@ public class PlayerControler : Controler
 
         InputAction AttackAction;
         private float RotateMargin=0.2f,RayRange=0.5f;
-        private LayerMask GroundLayerMask;
-        private bool isGrounded=true;
+        [SerializeField] private LayerMask GroundLayerMask;
+        [SerializeField] private bool isGrounded=true;
 
     [Header("Components")]
 
@@ -42,12 +42,15 @@ public class PlayerControler : Controler
 
             RaycastHit HitInfo;
             Debug.DrawLine(Base.position, Base.position+Vector3.down*RayRange,Color.red);
-            if(!isGrounded && Physics.Linecast(Base.position, Base.position+Vector3.down*RayRange,out HitInfo,GroundLayerMask))
+            if(Physics2D.Linecast(Base.position, Base.position+Vector3.down*RayRange,out HitInfo/*,GroundLayerMask*/))
             {
 
                 Land();
+                Debug.Log("there");
 
             }
+
+            Debug.Log(HitInfo.collider);
 
         }
 
@@ -57,10 +60,15 @@ public class PlayerControler : Controler
         public void Jump()
         {
 
-            CharacterMovement.Jump();
-            CharacterAnimator.SetBool("isLanding",false);
-            UpdateAnimation(ISJUMPING);
-            isGrounded=false;
+            if(isGrounded)
+            {
+
+                CharacterMovement.Jump();
+                CharacterAnimator.SetBool("isLanding",false);
+                UpdateAnimation(ISJUMPING);
+                isGrounded=false;
+
+            }
 
         }
 

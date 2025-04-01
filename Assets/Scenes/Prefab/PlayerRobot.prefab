@@ -195,6 +195,9 @@ MonoBehaviour:
   CharacterMovement: {fileID: 3984089505982651841}
   WalkSpeed: 0
   RunSpeed: 0
+  GroundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
   Base: {fileID: 5367036196840350652}
 --- !u!50 &3898675698305371785
 Rigidbody2D:

@@ -23,12 +23,9 @@ public class Movement : MonoBehaviour
     public void Jump()
     {
 
-        Debug.Log(isCharacterJumping);
-
         if(!isCharacterJumping)
         {
 
-            Debug.Log(Vector2.up*Jumpheigth);
             CharacterBody.linearVelocity+=(Vector2.up*Jumpheigth);
             Invoke("Land",JumpAnimDuration);
             isCharacterJumping=true;
@@ -67,7 +64,6 @@ public class Movement : MonoBehaviour
     {
 
         isCharacterJumping=false;
-        Debug.Log("Jump End");
 
     }
 
