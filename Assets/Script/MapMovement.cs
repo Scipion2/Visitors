@@ -13,8 +13,6 @@ public class MapMovement : MonoBehaviour
     {
 
         Input.gyro.enabled=true;
-        Debug.Log(Input.gyro.enabled);
-
     }
 
     public void Update()
