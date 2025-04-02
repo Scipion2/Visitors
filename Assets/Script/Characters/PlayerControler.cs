@@ -40,17 +40,13 @@ public class PlayerControler : Controler
 
             }
 
-            RaycastHit HitInfo;
             Debug.DrawLine(Base.position, Base.position+Vector3.down*RayRange,Color.red);
-            if(Physics2D.Linecast(Base.position, Base.position+Vector3.down*RayRange,out HitInfo/*,GroundLayerMask*/))
+            if(Physics2D.Linecast(Base.position, Base.position+Vector3.down*RayRange,GroundLayerMask))
             {
 
                 Land();
-                Debug.Log("there");
 
             }
-
-            Debug.Log(HitInfo.collider);
 
         }
 
