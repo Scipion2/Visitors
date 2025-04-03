@@ -6,7 +6,7 @@ public class PlayerControler : Controler
     
     [Header("Datas")]
 
-        InputAction AttackAction;
+        InputAction AttackAction,MoveAction;
         private float RotateMargin=0.2f,RayRange=0.5f;
         [SerializeField] private LayerMask GroundLayerMask;
         [SerializeField] private bool isGrounded=true;
@@ -27,6 +27,7 @@ public class PlayerControler : Controler
 
             EventManager.instance.JumpEvent.AddListener(Jump);
             AttackAction=InputSystem.actions.FindAction("Attack");
+            MoveAction=InputSystem.actions.FindAction("GyroMove");
             GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
             Input.gyro.enabled=true;
 
@@ -42,6 +43,8 @@ public class PlayerControler : Controler
                 UpdateAnimation(ISATTACKING);
 
             }
+
+            CharacterMovement.Move(MoveAction.ReadValue<Vector3>());
 
 
             if(Input.gyro.rotationRateUnbiased!=null)
