@@ -10,6 +10,7 @@ public class PlayerControler : Controler
         private float RotateMargin=0.2f,RayRange=0.5f;
         [SerializeField] private LayerMask GroundLayerMask;
         [SerializeField] private bool isGrounded=true;
+        [SerializeField] private Vector2 OldPos=new Vector2();
 
     [Header("Components")]
 
@@ -26,6 +27,9 @@ public class PlayerControler : Controler
 
             EventManager.instance.JumpEvent.AddListener(Jump);
             AttackAction=InputSystem.actions.FindAction("Attack");
+            GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
+            OldPos=this.transform.position;
+            Input.gyro.enabled=true;
 
         }
 
@@ -40,13 +44,35 @@ public class PlayerControler : Controler
 
             }
 
-            Debug.DrawLine(Base.position, Base.position+Vector3.down*RayRange,Color.red);
-            if(Physics2D.Linecast(Base.position, Base.position+Vector3.down*RayRange,GroundLayerMask))
+
+            Vector2 CharacterMoveQuantity=CharacterMovement.GetCharacterBody().linearVelocity;
+
+            if(CharacterMoveQuantity.x>0.1)
             {
 
-                Land();
+                UpdateAnimation(ISMOVINGRIGHT);
+
+            }else if(CharacterMoveQuantity.x<-0.1)
+            {
+
+                UpdateAnimation(ISMOVINGLEFT);
+
+            }else
+            {
+
+                UpdateAnimation(ISIDLE);
 
             }
+            
+
+        }
+
+    //ACTIONS
+
+        private void Move()
+        {
+
+            //
 
         }
 
@@ -68,12 +94,15 @@ public class PlayerControler : Controler
 
         }
 
-        public void Land()
+        public void GroundCheck(Collider2D Hitted)
         {
 
-            UpdateAnimation(ISIDLE);
-            CharacterAnimator.SetBool("isLanding",true);
-            isGrounded=true;
+            if(!isGrounded)
+            {
+                UpdateAnimation(ISIDLE);
+                CharacterAnimator.SetBool("isLanding",true);
+                isGrounded=true;
+            }
 
         }
 

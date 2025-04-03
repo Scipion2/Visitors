@@ -7,19 +7,21 @@ public class MapMovement : MonoBehaviour
 {
    
     [SerializeField] private GameObject ActiveMap;
-    private float RotateSpeed=20f,ReverseRange=-1f,ReverseDelay=30f,CurrentDelay=0f;
+    private float RotateSpeed=8f,ReverseRange=-1f,ReverseDelay=30f,CurrentDelay=0f;
+
 
     void Start()
     {
 
         Input.gyro.enabled=true;
+
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
 
         Input.gyro.enabled=true;
-        Flip(Input.gyro.enabled ? Input.gyro.rotationRateUnbiased*Time.deltaTime*RotateSpeed : Vector3.zero); //X is Up and Down - 
+        Flip(Input.gyro.enabled ? Input.gyro.rotationRateUnbiased*Time.fixedDeltaTime*RotateSpeed : Vector3.zero); //X is Up and Down - 
 
         if(CurrentDelay>0)
             CurrentDelay--;
@@ -38,7 +40,7 @@ public class MapMovement : MonoBehaviour
     public void Flip(Vector3 InputValue)
     {
 
-        ActiveMap.transform.Rotate(0,0,InputValue.z);
+        ActiveMap.transform.Rotate(0,0,InputValue.z*RotateSpeed);
 
         if(InputValue.x<ReverseRange && CurrentDelay<=0)
             Reverse();

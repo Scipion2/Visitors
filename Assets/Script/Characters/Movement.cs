@@ -8,6 +8,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private float WalkSpeed=1f,Runfactor=2f,Jumpheigth=5f;
     private bool isCharacterRunning=false,isCharacterJumping=false;
 
+    //GETTERS
+
+        public Rigidbody2D GetCharacterBody(){return CharacterBody;}//Getter For CharacterBody
+
     public void Move(Vector2 Movement)
     {
 
@@ -26,7 +30,7 @@ public class Movement : MonoBehaviour
         if(!isCharacterJumping)
         {
 
-            CharacterBody.linearVelocity+=(Vector2.up*Jumpheigth);
+            CharacterBody.AddForce(Vector2.up*Jumpheigth);
             Invoke("Land",JumpAnimDuration);
             isCharacterJumping=true;
 
