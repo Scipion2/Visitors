@@ -15,12 +15,7 @@ public class Movement : MonoBehaviour
     public void Move(Vector2 Movement)
     {
 
-        if(Movement!=Vector2.zero)
-        {
-
-            CharacterBody.linearVelocity+=Movement*WalkSpeed;
-
-        }
+        CharacterBody.linearVelocity+=Movement*WalkSpeed;
 
     }
 

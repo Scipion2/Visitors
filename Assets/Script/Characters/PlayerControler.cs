@@ -10,7 +10,7 @@ public class PlayerControler : Controler
         private float RotateMargin=0.2f,RayRange=0.5f;
         [SerializeField] private LayerMask GroundLayerMask;
         [SerializeField] private bool isGrounded=true;
-        [SerializeField] private Vector2 OldPos=new Vector2();
+        private float RotationRate=0f;
 
     [Header("Components")]
 
@@ -28,7 +28,6 @@ public class PlayerControler : Controler
             EventManager.instance.JumpEvent.AddListener(Jump);
             AttackAction=InputSystem.actions.FindAction("Attack");
             GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
-            OldPos=this.transform.position;
             Input.gyro.enabled=true;
 
         }
@@ -45,7 +44,37 @@ public class PlayerControler : Controler
             }
 
 
-            Vector2 CharacterMoveQuantity=CharacterMovement.GetCharacterBody().linearVelocity;
+            if(Input.gyro.rotationRateUnbiased!=null)
+            {
+
+                RotationRate=Input.gyro.rotationRateUnbiased.z;
+
+            }
+
+            CharacterMovement.Move(new Vector2(RotationRate,0));
+
+
+            if(RotationRate>0.1)
+            {
+
+                UpdateAnimation(ISMOVINGRIGHT);
+
+            }else if(RotationRate<-0.1)
+            {
+
+                UpdateAnimation(ISMOVINGLEFT);
+
+            }else
+            {
+
+                UpdateAnimation(ISIDLE);
+
+            }
+
+
+
+
+            /*Vector2 CharacterMoveQuantity=CharacterMovement.GetCharacterBody().linearVelocity;
 
             if(CharacterMoveQuantity.x>0.1)
             {
@@ -62,19 +91,12 @@ public class PlayerControler : Controler
 
                 UpdateAnimation(ISIDLE);
 
-            }
+            }*/
             
 
         }
 
     //ACTIONS
-
-        private void Move()
-        {
-
-            //
-
-        }
 
 
     //LISTENERS
