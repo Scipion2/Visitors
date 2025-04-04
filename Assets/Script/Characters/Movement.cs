@@ -12,10 +12,10 @@ public class Movement : MonoBehaviour
 
         public Rigidbody2D GetCharacterBody(){return CharacterBody;}//Getter For CharacterBody
 
-    public void Move(Vector2 Movement)
+    public void Move(float Movement)
     {
 
-        CharacterBody.linearVelocity+=Movement*WalkSpeed;
+        CharacterBody.linearVelocity=new Vector2(Movement*WalkSpeed,CharacterBody.linearVelocity.y);
 
     }
 

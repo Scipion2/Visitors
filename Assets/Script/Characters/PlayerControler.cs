@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
 public class PlayerControler : Controler
 {
@@ -10,7 +11,7 @@ public class PlayerControler : Controler
         private float RotateMargin=0.2f,RayRange=0.5f;
         [SerializeField] private LayerMask GroundLayerMask;
         [SerializeField] private bool isGrounded=true;
-        private float RotationRate=0f;
+        private bool GyroChecked=false;
 
     [Header("Components")]
 
@@ -29,14 +30,40 @@ public class PlayerControler : Controler
             AttackAction=InputSystem.actions.FindAction("Attack");
             MoveAction=InputSystem.actions.FindAction("GyroMove");
             GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
-            Input.gyro.enabled=true;
+            
+            
+            
 
         }
 
         public void Update()
         {
 
+            //Gyro Start
 
+            /*if(!GyroChecked)
+            {
+
+                if(Gyroscope.current!=null)
+                {
+                    
+                    Debug.Log("Gyroscope Detected");
+                    InputSystem.EnableDevice(Gyroscope.current);
+                    GyroChecked=true;
+
+                }
+                else
+                    Debug.Log("No Gyroscope There");
+
+            }else
+            {
+
+                Debug.Log("x = "+Gyroscope.current.angularVelocity.x.value);
+                Debug.Log("y = "+Gyroscope.current.angularVelocity.y.value);
+                Debug.Log("z = "+Gyroscope.current.angularVelocity.z.value);
+
+            }*/
+            
             if(AttackAction.IsPressed())
             {
 
@@ -44,25 +71,17 @@ public class PlayerControler : Controler
 
             }
 
-            CharacterMovement.Move(MoveAction.ReadValue<Vector3>());
 
+            float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x/*+MoveAction.ReadValue<Vector3>().x*/;
+            Debug.Log(AngularMobileMovement);
+            CharacterMovement.Move(AngularMobileMovement*10);
 
-            if(Input.gyro.rotationRateUnbiased!=null)
-            {
-
-                RotationRate=Input.gyro.rotationRateUnbiased.z;
-
-            }
-
-            CharacterMovement.Move(new Vector2(RotationRate,0));
-
-
-            if(RotationRate>0.1)
+            if(AngularMobileMovement>0.1)
             {
 
                 UpdateAnimation(ISMOVINGRIGHT);
 
-            }else if(RotationRate<-0.1)
+            }else if(AngularMobileMovement<-0.1)
             {
 
                 UpdateAnimation(ISMOVINGLEFT);
@@ -72,30 +91,7 @@ public class PlayerControler : Controler
 
                 UpdateAnimation(ISIDLE);
 
-            }
-
-
-
-
-            /*Vector2 CharacterMoveQuantity=CharacterMovement.GetCharacterBody().linearVelocity;
-
-            if(CharacterMoveQuantity.x>0.1)
-            {
-
-                UpdateAnimation(ISMOVINGRIGHT);
-
-            }else if(CharacterMoveQuantity.x<-0.1)
-            {
-
-                UpdateAnimation(ISMOVINGLEFT);
-
-            }else
-            {
-
-                UpdateAnimation(ISIDLE);
-
-            }*/
-            
+            }      
 
         }
 
