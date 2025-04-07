@@ -38,4 +38,12 @@ public class Character : MonoBehaviour
 
         }
 
+        protected void Death()
+        {
+
+            GameManager.instance.Defeat();
+            Destroy(this.gameObject);
+
+        }
+
 }

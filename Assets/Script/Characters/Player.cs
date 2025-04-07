@@ -10,4 +10,11 @@ public class Player : Character
 
     //ESSENTIALS
 
+    public void LoseLive()
+    {
+
+        //
+
+    }
+
 }
