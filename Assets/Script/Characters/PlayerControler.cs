@@ -38,31 +38,6 @@ public class PlayerControler : Controler
 
         public void Update()
         {
-
-            //Gyro Start
-
-            /*if(!GyroChecked)
-            {
-
-                if(Gyroscope.current!=null)
-                {
-                    
-                    Debug.Log("Gyroscope Detected");
-                    InputSystem.EnableDevice(Gyroscope.current);
-                    GyroChecked=true;
-
-                }
-                else
-                    Debug.Log("No Gyroscope There");
-
-            }else
-            {
-
-                Debug.Log("x = "+Gyroscope.current.angularVelocity.x.value);
-                Debug.Log("y = "+Gyroscope.current.angularVelocity.y.value);
-                Debug.Log("z = "+Gyroscope.current.angularVelocity.z.value);
-
-            }*/
             
             if(AttackAction.IsPressed())
             {
@@ -72,9 +47,8 @@ public class PlayerControler : Controler
             }
 
 
-            float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x/*+MoveAction.ReadValue<Vector3>().x*/;
-            Debug.Log(AngularMobileMovement);
-            CharacterMovement.Move(AngularMobileMovement*10);
+            float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x;
+            CharacterMovement.Move(AngularMobileMovement);
 
             if(AngularMobileMovement>0.1)
             {

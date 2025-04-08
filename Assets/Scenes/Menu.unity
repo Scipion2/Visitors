@@ -377,7 +377,7 @@ PrefabInstance:
     - target: {fileID: 4699069043150050723, guid: 66a442d3bb42d0749b4c764c0ad232f9, type: 3}
       propertyPath: MainCamera
       value: 
-      objectReference: {fileID: 2144109088}
+      objectReference: {fileID: 2144109090}
     - target: {fileID: 5444237531216833957, guid: 66a442d3bb42d0749b4c764c0ad232f9, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 2144109088}
   - component: {fileID: 2144109087}
   - component: {fileID: 2144109086}
+  - component: {fileID: 2144109090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -489,7 +490,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -5
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -524,6 +525,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2144109090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144109085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b62cf20b25dc44a9a6933d5d9ba36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

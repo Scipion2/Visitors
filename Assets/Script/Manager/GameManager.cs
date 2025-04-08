@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [Space(2)]
 
         [SerializeField] private Player playerPrefab,player;
-        [SerializeField] private Camera MainCamera;
+        [SerializeField] private CameraMove MainCamera;
     public static GameManager instance;
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
 
         LevelManager.instance.Launch();
-        Invoke("LaunchGame",1f);
+        Invoke("LaunchGame",0.01f);
 
     }
 
@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour
     {
 
         UIManager.instance.OnGameStart();
+        MainCamera.SetTarget(LevelManager.instance.GetCurrentSpawn());
         player=Object.Instantiate(playerPrefab, LevelManager.instance.GetCurrentSpawn().position,Quaternion.identity);
-        MainCamera.transform.SetParent(playerPrefab.gameObject.transform);
-        MainCamera.transform.Translate(playerPrefab.gameObject.transform.position);
+        MainCamera.SetTarget(player.transform);
 
     }
 

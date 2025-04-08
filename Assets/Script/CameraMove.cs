@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Transform Target;
+
+    //GETTER
+
+    //SETTER
+
+        public void SetTarget(Transform SRC){Target=SRC; this.transform.position=Target.position;}//Setter For Target
+
+    //ESSENTIAL
+
+    public void Update()
     {
-        
+
+        if(Target!=null)
+        {
+
+            transform.Translate(Target.position-transform.position);
+
+        }
+            
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
