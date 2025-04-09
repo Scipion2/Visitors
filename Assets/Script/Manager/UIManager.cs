@@ -7,7 +7,10 @@ public class UIManager : MonoBehaviour
     [Space(2)]
 
         [SerializeField] private Transform UIDisplayer;
-        [SerializeField] private GameObject PlayerUIPrefab,PlayerUI;
+        [SerializeField] private GameObject PlayerUIPrefab;
+        [SerializeField] private PlayerUI CurrentPlayerUI;
+        [SerializeField] private GameObject LoseWindowPrefab;
+        [SerializeField] private GameObject LoseWindow;
 
     public static UIManager instance;
     private void Awake()
@@ -28,7 +31,7 @@ public class UIManager : MonoBehaviour
     {
 
         DisplayPlayerUI(true);
-        initPlayerUI();
+        Invoke("initPlayerUI",0.1f);
 
     }
 
@@ -42,21 +45,42 @@ public class UIManager : MonoBehaviour
     private void DisplayPlayerUI(bool isDisplayable)
     {
 
-        if(PlayerUI==null)
+        if(CurrentPlayerUI==null)
         {
 
-            PlayerUI=Instantiate(PlayerUIPrefab,UIDisplayer);
+            CurrentPlayerUI=Instantiate(PlayerUIPrefab,UIDisplayer).GetComponent<PlayerUI>();
 
         }
 
-        PlayerUI.SetActive(isDisplayable);
+        CurrentPlayerUI.gameObject.SetActive(isDisplayable);
+
+    }
+
+    public void DisplayLoseWindow(bool isDisplayable)
+    {
+
+        if(LoseWindow==null)
+        {
+
+            LoseWindow=Instantiate(LoseWindowPrefab,UIDisplayer);
+
+        }
+
+        LoseWindow.SetActive(isDisplayable);
 
     }
 
     private void initPlayerUI()
     {
 
-        //
+        CurrentPlayerUI.Initialize(GameManager.instance.GetPlayerLives());
+
+    }
+
+    public void UpdateLives(int NewLivesAmount)
+    {
+
+        CurrentPlayerUI.UpdateLives(NewLivesAmount);
 
     }
 

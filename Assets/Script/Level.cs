@@ -25,6 +25,17 @@ public class Level : MonoBehaviour
 
             LevelManager.instance.SetCurrentSpawn(Spawn);
             LevelManager.instance.SetLevelDatas(this);
+            EventManager.instance.CheckPointEvent.AddListener(UpdateCheckPoint);
+
+        }
+
+        public void UpdateCheckPoint(int CheckPointIndex)
+        {
+
+            if(CheckPointIndex>CurrentCheckPoint)
+                CurrentCheckPoint=CheckPointIndex;
+
+            LevelManager.instance.SetCurrentSpawn(CheckPoints[CurrentCheckPoint]);
 
         }
         

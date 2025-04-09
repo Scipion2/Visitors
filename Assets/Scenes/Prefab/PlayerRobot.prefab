@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 7638371245191615808}
   m_Layer: 0
   m_Name: PlayerRobot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 3898675698305371785}
   JumpAnimDuration: 0.6
-  WalkSpeed: 100
+  WalkSpeed: 30
   Runfactor: 2
-  Jumpheigth: 0.5
+  Jumpheigth: 400
 --- !u!114 &2991409074770689397
 MonoBehaviour:
   m_ObjectHideFlags: 0

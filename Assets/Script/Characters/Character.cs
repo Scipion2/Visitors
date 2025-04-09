@@ -5,7 +5,8 @@ public class Character : MonoBehaviour
 
     [Header("Character Data")]
 
-        [SerializeField] private int CurrentLives,MaxLives;
+        [SerializeField] protected int CurrentLives,MaxLives;
+        [SerializeField] public enum DamageType{Base,Lethal,Final}
         
 
     [Header("Character Component")]
@@ -18,6 +19,8 @@ public class Character : MonoBehaviour
         protected void SetLives(int LivesToTake){CurrentLives=LivesToTake;}//Setter For CurrentLives
 
     //GETTERS
+
+        public int GetLives(){return CurrentLives;}//Getter For CurrentLives
 
     //ESSENTIALS
 
@@ -43,6 +46,32 @@ public class Character : MonoBehaviour
 
             GameManager.instance.Defeat();
             Destroy(this.gameObject);
+
+        }
+
+        public virtual void TakeDamage(DamageType TypeOfDamageTaken)
+        {
+
+            switch(TypeOfDamageTaken)
+            {
+
+                case DamageType.Base :
+
+                    LoseLive(1);
+
+                    break;
+
+                case DamageType.Lethal :
+
+                    LoseLive(1);
+
+                    break;
+
+                default :
+
+                    break;
+
+            }
 
         }
 

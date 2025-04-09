@@ -3,14 +3,14 @@ using UnityEngine;
 public class DeadZone : MonoBehaviour
 {
 
-    public void OnTrigerEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         
-        if(collision.gameObject.tag=="Player")
+        if(other.gameObject.tag=="Player")
         {
 
-            Player temp=collision.gameObject.GetComponent<Player>();
-            temp.LoseLive();
+            Player temp=other.gameObject.GetComponent<Player>();
+            temp.TakeDamage(Character.DamageType.Lethal);
 
         }
 

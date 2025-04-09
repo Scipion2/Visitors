@@ -9,28 +9,39 @@ public class GameManager : MonoBehaviour
 
         [SerializeField] private Player playerPrefab,player;
         [SerializeField] private CameraMove MainCamera;
-    public static GameManager instance;
-    private void Awake()
-    {
-        if (instance != null && instance != this)
+
+    //SETTER
+
+    //GETTER
+        
+        public int GetPlayerLives(){return player.GetLives();}//Getter For Player's Lives
+
+    //ESSENTIAL
+
+        public static GameManager instance;
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            return;
+            if (instance != null && instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+            DontDestroyOnLoad(this.gameObject);
         }
-        else
+
+        public void Start()
         {
-            instance = this;
+
+            LevelManager.instance.Launch();
+            Invoke("LaunchGame",0.01f);
+
         }
-        DontDestroyOnLoad(this.gameObject);
-    }
 
-    public void Start()
-    {
-
-        LevelManager.instance.Launch();
-        Invoke("LaunchGame",0.01f);
-
-    }
+    //
 
     public void LaunchGame()
     {
@@ -45,7 +56,7 @@ public class GameManager : MonoBehaviour
     public void Defeat()
     {
 
-        //
+        UIManager.instance.DisplayLoseWindow(true);
 
     }
    

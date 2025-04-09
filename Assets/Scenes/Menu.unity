@@ -196,6 +196,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
+      propertyPath: PlayerUIPrefab
+      value: 
+      objectReference: {fileID: 7374371291689332019, guid: 446fb592adc78b441840c56e553cb3e6, type: 3}
+    - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
+      propertyPath: LoseWindowPrefab
+      value: 
+      objectReference: {fileID: 8150661949123951718, guid: 2bc46fd27f8dd2948adeac75417cf616, type: 3}
+    - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
+      propertyPath: InfoDisplayerPrefab
+      value: 
+      objectReference: {fileID: 7715047709246317702, guid: e8da8bbfde6d5ee45acaf0cfc97428a6, type: 3}
     - target: {fileID: 4132885116471050380, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
       propertyPath: m_RenderMode
       value: 1

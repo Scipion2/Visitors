@@ -12,4 +12,25 @@ public class Buttons : MonoBehaviour
 
     }
 
+    public void Quit()
+    {
+
+        Application.Quit();
+
+    }
+
+    public void Retry()
+    {
+
+        //
+
+    }
+
+    public void Menu()
+    {
+
+        //
+
+    }
+
 }

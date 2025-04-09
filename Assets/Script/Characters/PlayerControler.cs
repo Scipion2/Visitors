@@ -50,12 +50,12 @@ public class PlayerControler : Controler
             float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x;
             CharacterMovement.Move(AngularMobileMovement);
 
-            if(AngularMobileMovement>0.1)
+            if(AngularMobileMovement>0.05)
             {
 
                 UpdateAnimation(ISMOVINGRIGHT);
 
-            }else if(AngularMobileMovement<-0.1)
+            }else if(AngularMobileMovement<-0.05)
             {
 
                 UpdateAnimation(ISMOVINGLEFT);
