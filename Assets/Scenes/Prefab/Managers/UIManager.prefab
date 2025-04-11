@@ -231,3 +231,5 @@ MonoBehaviour:
   CurrentPlayerUI: {fileID: 0}
   LoseWindowPrefab: {fileID: 8150661949123951718, guid: 2bc46fd27f8dd2948adeac75417cf616, type: 3}
   LoseWindow: {fileID: 0}
+  TipsWindowPrefab: {fileID: 343203934428043558, guid: a86d615c8cd20b44c89a26ce5104d105, type: 3}
+  CurrentTipsWindow: {fileID: 0}
