@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e334e35a10b5e8c40b839e220eddb31a
+labels:
+- Texture
+timeCreated: 18446744011573954816
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26602
+  packageName: VV TexturePack
+  packageVersion: 1.1
+  assetPath: Assets/VV TexturePack/Materials/Plaster1.mat
+  uploadId: 737916
