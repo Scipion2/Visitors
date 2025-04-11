@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
         [SerializeField] private GameObject LoseWindowPrefab;
         [SerializeField] private GameObject LoseWindow;
         [SerializeField] private TipsWindow TipsWindowPrefab, CurrentTipsWindow;
+        [SerializeField] private GameObject PauseWindowPrefab;
+        [SerializeField] private GameObject CurrentPauseWindow;
 
     //GETTERS
 
@@ -35,6 +37,20 @@ public class UIManager : MonoBehaviour
         }
 
     //DISPLAYERS
+
+        public void PauseWindowDisplay(bool isDisplayable)
+        {
+
+            if(CurrentPauseWindow==null)
+            {
+
+                CurrentPauseWindow=Instantiate(PauseWindowPrefab);
+
+            }
+
+            CurrentPauseWindow.SetActive(isDisplayable);
+
+        }
 
         public void DisplayTipWindow(string Message)
         {

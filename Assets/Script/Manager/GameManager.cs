@@ -43,6 +43,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void NextLevel()
+    {
+
+        //
+
+    }
+
     public void LaunchGame()
     {
 

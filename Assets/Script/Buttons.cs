@@ -38,6 +38,7 @@ public class Buttons : MonoBehaviour
     {
 
         SceneManager.LoadScene("Settings",LoadSceneMode.Additive);
+        Time.timeScale=0.1f;
 
     }
 
@@ -59,6 +60,14 @@ public class Buttons : MonoBehaviour
     {
 
         SceneManager.UnloadSceneAsync("Settings");
+        Time.timeScale=1;
+
+    }
+
+    public void Unpause()
+    {
+
+        Time.timeScale=1;
 
     }
 

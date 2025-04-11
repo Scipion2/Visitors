@@ -951,6 +951,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8150661949123951718, guid: 2bc46fd27f8dd2948adeac75417cf616, type: 3}
     - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
+      propertyPath: PauseWindowPrefab
+      value: 
+      objectReference: {fileID: 4744076167784752351, guid: 8441a36b111885f48b8c44ba4923af74, type: 3}
+    - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
       propertyPath: InfoDisplayerPrefab
       value: 
       objectReference: {fileID: 7715047709246317702, guid: e8da8bbfde6d5ee45acaf0cfc97428a6, type: 3}
