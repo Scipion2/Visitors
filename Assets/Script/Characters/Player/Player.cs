@@ -84,7 +84,7 @@ public class Player : Character
         {
 
             TankCapacityFilled=1;
-            //Next Level
+            GameManager.instance.NextLevel();
 
         }
 
@@ -94,7 +94,7 @@ public class Player : Character
     {
 
         Destroy(this.gameObject);
-        
+
     }
 
 

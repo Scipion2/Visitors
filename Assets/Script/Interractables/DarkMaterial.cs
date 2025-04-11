@@ -8,8 +8,14 @@ public class DarkMaterial : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
 
-        EventManager.instance.DarkMaterialEvent.Invoke(DarkMaterialQuantity);
-        this.gameObject.SetActive(false);
+        if(other.gameObject.tag=="Player")
+        {
+
+            EventManager.instance.DarkMaterialEvent.Invoke(DarkMaterialQuantity);
+            this.gameObject.SetActive(false);
+
+        }
+        
 
     }
 
