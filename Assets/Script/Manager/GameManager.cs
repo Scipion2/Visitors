@@ -33,15 +33,15 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
-        public void Start()
-        {
-
-            LevelManager.instance.Launch();
-            Invoke("LaunchGame",0.01f);
-
-        }
-
     //
+
+    public void Play()
+    {
+
+        LevelManager.instance.Launch();
+        Invoke("LaunchGame",0.02f);
+
+    }
 
     public void LaunchGame()
     {
@@ -57,6 +57,16 @@ public class GameManager : MonoBehaviour
     {
 
         UIManager.instance.DisplayLoseWindow(true);
+
+    }
+
+    public void ResetLevel()
+    {
+
+        LevelManager.instance.ResetLevel();
+        player=Object.Instantiate(playerPrefab, LevelManager.instance.GetCurrentSpawn().position,Quaternion.identity);
+        MainCamera.SetTarget(player.transform);
+        UIManager.instance.OnGameStart();
 
     }
    

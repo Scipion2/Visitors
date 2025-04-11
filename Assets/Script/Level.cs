@@ -38,5 +38,13 @@ public class Level : MonoBehaviour
             LevelManager.instance.SetCurrentSpawn(CheckPoints[CurrentCheckPoint]);
 
         }
+
+        public Transform Reset()
+        {
+
+            CurrentCheckPoint=-1;
+            return Spawn;
+
+        }
         
 }

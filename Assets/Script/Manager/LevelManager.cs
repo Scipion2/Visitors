@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
 
         [SerializeField] private string[] Levels;
         [SerializeField] private Level LevelDatas;
+        [SerializeField] private int CurrentLevel=0;
 
     //GETTERS
 
@@ -42,7 +43,14 @@ public class LevelManager : MonoBehaviour
     public void Launch()
     {
 
-        SceneManager.LoadScene(Levels[0],LoadSceneMode.Additive);
+        SceneManager.LoadScene(Levels[CurrentLevel]/*,LoadSceneMode.Additive*/);
+
+    }
+
+    public void ResetLevel()
+    {
+
+        CurrentSpawn=LevelDatas.Reset();
 
     }
 

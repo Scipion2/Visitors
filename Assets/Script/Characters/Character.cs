@@ -7,11 +7,12 @@ public class Character : MonoBehaviour
 
         [SerializeField] protected int CurrentLives,MaxLives;
         [SerializeField] public enum DamageType{Base,Lethal,Final}
+        [SerializeField] private float DeathAnimationTime;
         
 
     [Header("Character Component")]
 
-        [SerializeField] private Transform fillingComponent;
+        [SerializeField] public Controler CharacterControler;
 
 
     //SETTERS
@@ -42,6 +43,14 @@ public class Character : MonoBehaviour
         }
 
         protected void Death()
+        {
+
+            CharacterControler.UpdateAnimation(Controler.ISDYING);
+            Invoke("End",DeathAnimationTime);
+
+        }
+
+        private void End()
         {
 
             GameManager.instance.Defeat();

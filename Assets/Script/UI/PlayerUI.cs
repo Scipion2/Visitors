@@ -35,6 +35,7 @@ public class PlayerUI : MonoBehaviour
         public void UpdateLives(int NewLivesAmount)
         {
 
+            Debug.Log(NewLivesAmount+" : "+Lifes.Length);
 
             if(NewLivesAmount>Lifes.Length)
             {

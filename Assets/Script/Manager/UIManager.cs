@@ -11,77 +11,107 @@ public class UIManager : MonoBehaviour
         [SerializeField] private PlayerUI CurrentPlayerUI;
         [SerializeField] private GameObject LoseWindowPrefab;
         [SerializeField] private GameObject LoseWindow;
+        [SerializeField] private TipsWindow TipsWindowPrefab, CurrentTipsWindow;
 
-    public static UIManager instance;
-    private void Awake()
-    {
-        if (instance != null && instance != this)
+    //GETTERS
+
+    //SETTERS
+
+    //ESSENTIALS
+
+        public static UIManager instance;
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-    public void OnGameStart()
-    {
-
-        DisplayPlayerUI(true);
-        Invoke("initPlayerUI",0.1f);
-
-    }
-
-    public void OnGameEnd()
-    {
-
-        DisplayPlayerUI(false);
-
-    }
-
-    private void DisplayPlayerUI(bool isDisplayable)
-    {
-
-        if(CurrentPlayerUI==null)
-        {
-
-            CurrentPlayerUI=Instantiate(PlayerUIPrefab,UIDisplayer).GetComponent<PlayerUI>();
-
+            if (instance != null && instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+            DontDestroyOnLoad(this.gameObject);
         }
 
-        CurrentPlayerUI.gameObject.SetActive(isDisplayable);
+    //DISPLAYERS
 
-    }
-
-    public void DisplayLoseWindow(bool isDisplayable)
-    {
-
-        if(LoseWindow==null)
+        public void DisplayTipWindow(string Message)
         {
 
-            LoseWindow=Instantiate(LoseWindowPrefab,UIDisplayer);
+            if(CurrentTipsWindow==null)
+            {
+
+                CurrentTipsWindow=Instantiate(TipsWindowPrefab);
+
+            }else
+            {
+
+                CurrentTipsWindow.gameObject.SetActive(true);
+
+            }
+
+            CurrentTipsWindow.SetMessage(Message);
 
         }
 
-        LoseWindow.SetActive(isDisplayable);
+        private void DisplayPlayerUI(bool isDisplayable)
+        {
 
-    }
+            if(CurrentPlayerUI==null)
+            {
 
-    private void initPlayerUI()
-    {
+                CurrentPlayerUI=Instantiate(PlayerUIPrefab,UIDisplayer).GetComponent<PlayerUI>();
 
-        CurrentPlayerUI.Initialize(GameManager.instance.GetPlayerLives());
+            }
 
-    }
+            CurrentPlayerUI.gameObject.SetActive(isDisplayable);
 
-    public void UpdateLives(int NewLivesAmount)
-    {
+        }
 
-        CurrentPlayerUI.UpdateLives(NewLivesAmount);
+        public void DisplayLoseWindow(bool isDisplayable)
+        {
 
-    }
+            if(LoseWindow==null)
+            {
+
+                LoseWindow=Instantiate(LoseWindowPrefab,UIDisplayer);
+
+            }
+
+            LoseWindow.SetActive(isDisplayable);
+
+        }
+
+    //PLAYER UI
+
+        public void OnGameStart()
+        {
+
+            DisplayPlayerUI(true);
+            Invoke("initPlayerUI",0.1f);
+
+        }
+
+        public void OnGameEnd()
+        {
+
+            DisplayPlayerUI(false);
+
+        }
+
+        private void initPlayerUI()
+        {
+
+            CurrentPlayerUI.Initialize(GameManager.instance.GetPlayerLives());
+
+        }
+
+        public void UpdateLives(int NewLivesAmount)
+        {
+
+            CurrentPlayerUI.UpdateLives(NewLivesAmount);
+
+        }
 
 }
