@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &5752172020657750689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,8 +230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLives: 0
   MaxLives: 1
-  DeathAnimationTime: 0
+  DeathAnimationTime: 1
   CharacterControler: {fileID: 5646183885712879412}
+  NPCCollider: {fileID: 1056855455986654129}
 --- !u!114 &5646183885712879412
 MonoBehaviour:
   m_ObjectHideFlags: 0

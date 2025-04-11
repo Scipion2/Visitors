@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class DarkMaterial : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    [SerializeField] private float DarkMaterialQuantity;
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
+
+        EventManager.instance.DarkMaterialEvent.Invoke(DarkMaterialQuantity);
+        this.gameObject.SetActive(false);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -180,7 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLives: 0
   MaxLives: 3
-  fillingComponent: {fileID: 0}
+  DeathAnimationTime: 0
+  CharacterControler: {fileID: 6459797113093335224}
+  TankCapacityFilled: 0
 --- !u!114 &6459797113093335224
 MonoBehaviour:
   m_ObjectHideFlags: 0

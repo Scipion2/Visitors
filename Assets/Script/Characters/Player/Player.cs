@@ -3,12 +3,20 @@ using UnityEngine;
 public class Player : Character
 {
 
+    [SerializeField] private float TankCapacityFilled=0;
 
     //SETTERS
 
     //GETTERS
 
     //ESSENTIALS
+
+    public void Start()
+    {
+
+        EventManager.instance.DarkMaterialEvent.AddListener(AddDarkMaterial);
+
+    }
 
     public override void TakeDamage(DamageType TypeOfDamageTaken)
     {
@@ -26,7 +34,12 @@ public class Player : Character
             case DamageType.Lethal :
 
                 if(LoseLive(1))
+                {
+
                     Death();
+                    GameManager.instance.Defeat();
+
+                }
                 else
                     UpdateData();
 
@@ -35,6 +48,7 @@ public class Player : Character
             case DamageType.Final :
 
                 Death();
+                GameManager.instance.Defeat();
 
                 break;
 
@@ -49,6 +63,7 @@ public class Player : Character
     private bool LowerState()
     {
 
+        LoseLive(1);
         return true;
 
     }
@@ -59,6 +74,27 @@ public class Player : Character
         this.transform.position=LevelManager.instance.GetCurrentSpawn().position;
         UIManager.instance.UpdateLives(CurrentLives);      
 
+    }
+
+    public void AddDarkMaterial(float AmountToAdd)
+    {
+
+        TankCapacityFilled+=AmountToAdd;
+        if(TankCapacityFilled>=1)
+        {
+
+            TankCapacityFilled=1;
+            //Next Level
+
+        }
+
+    }
+
+    public void End()
+    {
+
+        Destroy(this.gameObject);
+        
     }
 
 

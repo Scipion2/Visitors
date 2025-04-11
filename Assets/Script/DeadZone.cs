@@ -14,6 +14,13 @@ public class DeadZone : MonoBehaviour
 
         }
 
+        if(other.gameObject.tag=="NPC")
+        {
+
+            other.gameObject.GetComponent<NPC>().TakeDamage(Character.DamageType.Final);
+
+        }
+
     }
 
 }

@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
 
         UIManager.instance.DisplayLoseWindow(true);
+        UIManager.instance.EmptyAll();
 
     }
 

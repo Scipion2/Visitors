@@ -114,4 +114,11 @@ public class UIManager : MonoBehaviour
 
         }
 
+        public void EmptyAll()
+        {
+
+            CurrentPlayerUI.ClearUI();
+
+        }
+
 }

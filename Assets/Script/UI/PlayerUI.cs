@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerUI : MonoBehaviour
         [SerializeField] private GameObject LifeDisplayPrefab;
         [SerializeField] private LifeDisplay[] Lifes;
         [SerializeField] private Transform LifeContainer;
+        [SerializeField] private Image TankBar;
 
     //SETTERS
 
@@ -16,11 +18,18 @@ public class PlayerUI : MonoBehaviour
 
     //ESSENTIALS
 
+        public void Awake()
+        {
+
+            EventManager.instance.DarkMaterialEvent.AddListener(UpdateTank);
+
+        }
+
         public void Initialize(int LifeNumber)
         {
 
             Lifes=new LifeDisplay[LifeNumber];
-            Debug.Log(LifeDisplayPrefab);
+            TankBar.fillAmount=0;
 
             for(int i=0;i<LifeNumber;++i)
             {
@@ -32,10 +41,15 @@ public class PlayerUI : MonoBehaviour
 
         }
 
-        public void UpdateLives(int NewLivesAmount)
+        public void UpdateTank(float NewAmount)
         {
 
-            Debug.Log(NewLivesAmount+" : "+Lifes.Length);
+            TankBar.fillAmount= TankBar.fillAmount+NewAmount>1 ? 1 : TankBar.fillAmount+NewAmount;
+
+        }
+
+        public void UpdateLives(int NewLivesAmount)
+        {
 
             if(NewLivesAmount>Lifes.Length)
             {
@@ -79,6 +93,21 @@ public class PlayerUI : MonoBehaviour
                 }
 
             }
+
+        }
+
+        public void ClearUI()
+        {
+
+            TankBar.fillAmount=0.1f;
+            for(int i=0;i<Lifes.Length;++i)
+            {
+
+                Destroy(Lifes[i].gameObject);
+
+            }
+
+            Lifes=new LifeDisplay[0];
 
         }
 

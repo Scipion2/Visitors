@@ -45,6 +45,7 @@ public class Character : MonoBehaviour
         protected void Death()
         {
 
+            CurrentLives=0;
             CharacterControler.UpdateAnimation(Controler.ISDYING);
             Invoke("End",DeathAnimationTime);
 
@@ -53,8 +54,7 @@ public class Character : MonoBehaviour
         private void End()
         {
 
-            GameManager.instance.Defeat();
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
 
         }
 

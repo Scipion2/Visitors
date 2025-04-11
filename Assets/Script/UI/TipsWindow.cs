@@ -21,6 +21,7 @@ public class TipsWindow : MonoBehaviour
         public void Close()
         {
 
+            Time.timeScale=1;
             Destroy(this.gameObject);
 
         }

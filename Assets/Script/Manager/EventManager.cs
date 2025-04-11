@@ -21,5 +21,6 @@ public class EventManager : MonoBehaviour
 
     public UnityEvent JumpEvent;
     public UnityEvent<int> CheckPointEvent;
+    public UnityEvent<float> DarkMaterialEvent;
 
 }

@@ -7,20 +7,32 @@ public class EventTriger : MonoBehaviour
     [Space(2)]
 
         [SerializeField] protected string Message;
+        private bool isAlreadyTrigered=false;
 
     //ESSENTIALS
 
         public void OnTriggerEnter2D(Collider2D other)
         {
 
-            if(other.gameObject.tag=="Player")
+            if(!isAlreadyTrigered)
             {
 
-                UIManager.instance.DisplayTipWindow(Message);
-                Invoke("Event",5f);
+                if(other.gameObject.tag=="Player")
+                {
+
+                    isAlreadyTrigered=true;
+                    Time.timeScale=0;
+                    UIManager.instance.DisplayTipWindow(Message);
+                    Invoke("Event",5f);
+
+                }
+                
 
             }
 
         }
+
+        public void Event()
+        {}
 
 }

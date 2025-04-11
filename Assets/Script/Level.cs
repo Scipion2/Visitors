@@ -8,6 +8,7 @@ public class Level : MonoBehaviour
 
         [SerializeField] private Transform Spawn;
         [SerializeField] private Transform[] CheckPoints;
+        [SerializeField] private GameObject[] ObjectOnLevel;
         
     [Header("Level Datas")]
     [Space(2)]
@@ -43,6 +44,14 @@ public class Level : MonoBehaviour
         {
 
             CurrentCheckPoint=-1;
+
+            for(int i=0;i<ObjectOnLevel.Length;++i)
+            {
+
+                ObjectOnLevel[i].SetActive(true);
+
+            }
+
             return Spawn;
 
         }
