@@ -22,6 +22,7 @@ public class PlayerControler : Controler
     //GETTERS
 
     //ESSENTIALS
+    
 
         public void Start()
         {

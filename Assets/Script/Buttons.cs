@@ -1,9 +1,27 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class Buttons : MonoBehaviour
+public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
 {
+
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+
+        Debug.Log("Downn");
+        AudioManager.instance.PlayAudio(AudioManager.AudioName.ButtonDown);
+
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+
+        Debug.Log("Up");
+        AudioManager.instance.PlayAudio(AudioManager.AudioName.ButtonUp);
+
+    }
 
 
     public void Jump()

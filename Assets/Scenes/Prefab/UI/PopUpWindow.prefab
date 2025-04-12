@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 5558611051025840193}
   - component: {fileID: 3986097963428558639}
   - component: {fileID: 1361039156685632843}
+  - component: {fileID: 28231954772997275}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -208,6 +209,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &28231954772997275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817773787715895270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8ace22736a6094fa46a6557179f384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3175924262313911027
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +233,7 @@ GameObject:
   - component: {fileID: 3064194591507717990}
   - component: {fileID: 9171709393309602665}
   - component: {fileID: 7524937117420672692}
+  - component: {fileID: 3321662133772217742}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -341,6 +355,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3321662133772217742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175924262313911027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8ace22736a6094fa46a6557179f384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3500371611654515394
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TIPS FOR YOU
+  m_text: TIPS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea4179ba609564f33b822e1be581b321, type: 2}
   m_sharedMaterial: {fileID: 21605244428125924, guid: ea4179ba609564f33b822e1be581b321, type: 2}
@@ -439,7 +465,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

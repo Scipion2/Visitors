@@ -119,6 +119,7 @@ public class UIManager : MonoBehaviour
         private void initPlayerUI()
         {
 
+            DisplayPlayerUI(true);
             CurrentPlayerUI.Initialize(GameManager.instance.GetPlayerLives());
 
         }

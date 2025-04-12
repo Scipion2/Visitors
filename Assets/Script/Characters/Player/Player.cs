@@ -10,6 +10,7 @@ public class Player : Character
     //GETTERS
 
     //ESSENTIALS
+    
 
     public void Start()
     {
