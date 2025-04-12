@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
         [SerializeField] private string[] Levels;
         [SerializeField] private Level LevelDatas;
         [SerializeField] private int CurrentLevel=0;
+        [SerializeField] private int CurrentMaxLevel=0;
 
     //GETTERS
 
@@ -40,10 +41,30 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    public void Start()
+    {
+
+        if(PlayerPrefs.HasKey("MaxLevel"))
+            CurrentMaxLevel=PlayerPrefs.GetInt("MaxLevel");
+
+    }
+
     public void Launch()
     {
 
-        SceneManager.LoadScene(Levels[CurrentLevel]/*,LoadSceneMode.Additive*/);
+        SceneManager.LoadScene(Levels[CurrentMaxLevel]);
+        CurrentLevel=CurrentMaxLevel;
+
+    }
+
+    public void GoToNextLevel()
+    {
+
+        CurrentLevel++;
+        if(CurrentLevel>CurrentMaxLevel)
+            CurrentMaxLevel=CurrentLevel;
+
+        SceneManager.LoadScene(Levels[CurrentLevel]);
 
     }
 

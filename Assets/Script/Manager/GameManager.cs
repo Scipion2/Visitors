@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
 
-        //
+        LevelManager.instance.GoToNextLevel();
 
     }
 
