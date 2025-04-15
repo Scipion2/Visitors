@@ -24,55 +24,72 @@ public class LevelManager : MonoBehaviour
     //SETTERS
 
         public void SetCurrentSpawn(Transform SRC){CurrentSpawn=SRC;}//Setter For CurrentSpawn
-        public void SetLevelDatas(Level SRC){LevelDatas=SRC;}//Setter For LevelDatas
+        public void SetLevelDatas(Level SRC){LevelDatas=SRC; GameManager.instance.SpawnPlayer();}//Setter For LevelDatas
 
-    public static LevelManager instance;
-    private void Awake()
-    {
-        if (instance != null && instance != this)
+    //ESSENTIALS
+
+        public static LevelManager instance;
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            return;
+            if (instance != null && instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+            DontDestroyOnLoad(this.gameObject);
         }
-        else
+
+        public void Start()
         {
-            instance = this;
+
+            if(PlayerPrefs.HasKey("MaxLevel"))
+                CurrentMaxLevel=PlayerPrefs.GetInt("MaxLevel");
+
         }
-        DontDestroyOnLoad(this.gameObject);
-    }
 
-    public void Start()
-    {
+        [ContextMenu("Reset Player Prefs")]
+        public void ResetSave()
+        {
 
-        if(PlayerPrefs.HasKey("MaxLevel"))
-            CurrentMaxLevel=PlayerPrefs.GetInt("MaxLevel");
+            PlayerPrefs.DeleteAll();
 
-    }
+        }
 
-    public void Launch()
-    {
+    //
 
-        SceneManager.LoadScene(Levels[CurrentMaxLevel]);
-        CurrentLevel=CurrentMaxLevel;
+        public void Launch()
+        {
 
-    }
+            SceneManager.LoadScene(Levels[CurrentMaxLevel]);
+            CurrentLevel=CurrentMaxLevel;
 
-    public void GoToNextLevel()
-    {
+        }
 
-        CurrentLevel++;
-        if(CurrentLevel>CurrentMaxLevel)
-            CurrentMaxLevel=CurrentLevel;
+        public void GoToNextLevel()
+        {
 
-        SceneManager.LoadScene(Levels[CurrentLevel]);
+            CurrentLevel++;
+            if(CurrentLevel>CurrentMaxLevel)
+            {
 
-    }
+                CurrentMaxLevel=CurrentLevel;
+                PlayerPrefs.SetInt("MaxLevel",CurrentMaxLevel);
 
-    public void ResetLevel()
-    {
+            }
 
-        CurrentSpawn=LevelDatas.Reset();
+            SceneManager.LoadScene(Levels[CurrentLevel]);
 
-    }
+        }
+
+        public void ResetLevel()
+        {
+
+            CurrentSpawn=LevelDatas.Reset();
+
+        }
 
 }

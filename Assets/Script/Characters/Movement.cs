@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
     
     [SerializeField] private Rigidbody2D CharacterBody;
     [SerializeField] private float JumpAnimDuration=0.6f;
-    [SerializeField] private float WalkSpeed=1f,Runfactor=2f,Jumpheigth=5f;
+    [SerializeField] private float WalkSpeed=1f,Runfactor=2f,Jumpheigth=5f,MaxSpeed;
     private bool isCharacterRunning=false,isCharacterJumping=false;
 
     //GETTERS
@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     {
 
         CharacterBody.linearVelocity=new Vector2(Movement*WalkSpeed,CharacterBody.linearVelocity.y);
+        CharacterBody.linearVelocity=new Vector2(Mathf.Clamp(CharacterBody.linearVelocity.x, -MaxSpeed, MaxSpeed),CharacterBody.linearVelocity.y);
 
     }
 

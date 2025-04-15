@@ -10,7 +10,6 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     public override void OnPointerDown(PointerEventData eventData)
     {
 
-        Debug.Log("Downn");
         AudioManager.instance.PlayAudio(AudioManager.AudioName.ButtonDown);
 
     }
@@ -18,7 +17,6 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     public override void OnPointerUp(PointerEventData eventData)
     {
 
-        Debug.Log("Up");
         AudioManager.instance.PlayAudio(AudioManager.AudioName.ButtonUp);
 
     }

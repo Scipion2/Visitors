@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
         {
 
             DisplayPlayerUI(true);
-            Invoke("initPlayerUI",0.1f);
+            Invoke("InitUI",0.1f);
 
         }
 
@@ -128,6 +128,14 @@ public class UIManager : MonoBehaviour
         {
 
             CurrentPlayerUI.UpdateLives(NewLivesAmount);
+
+        }
+
+        public void InitUI()
+        {
+
+            EmptyAll();
+            initPlayerUI();
 
         }
 

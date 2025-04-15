@@ -108,6 +108,7 @@ public class PlayerUI : MonoBehaviour
             }
 
             Lifes=new LifeDisplay[0];
+            Debug.Log(Lifes.Length);
 
         }
 

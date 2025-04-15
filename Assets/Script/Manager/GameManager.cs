@@ -39,24 +39,25 @@ public class GameManager : MonoBehaviour
     {
 
         LevelManager.instance.Launch();
-        Invoke("LaunchGame",0.02f);
 
     }
 
     public void NextLevel()
     {
 
+        Object.Destroy(player.gameObject);
         LevelManager.instance.GoToNextLevel();
 
     }
 
-    public void LaunchGame()
+
+    public void SpawnPlayer()
     {
 
-        UIManager.instance.OnGameStart();
         MainCamera.SetTarget(LevelManager.instance.GetCurrentSpawn());
         player=Object.Instantiate(playerPrefab, LevelManager.instance.GetCurrentSpawn().position,Quaternion.identity);
         MainCamera.SetTarget(player.transform);
+        UIManager.instance.OnGameStart();
 
     }
 
