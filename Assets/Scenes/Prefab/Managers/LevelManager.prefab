@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc935976fd2b1e42ae532d85f56651d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentSpawn: {fileID: 0}
+  Levels:
+  - Level0
+  - Level1
+  - Level2
+  LevelDatas: {fileID: 0}
+  CurrentLevel: 0
+  CurrentMaxLevel: 0

@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8494744438716802313, guid: de3e8be408a649144975b1f84bd9dbb4, type: 3}
       propertyPath: Levels.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8494744438716802313, guid: de3e8be408a649144975b1f84bd9dbb4, type: 3}
       propertyPath: 'Levels.Array.data[0]'
@@ -286,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 8494744438716802313, guid: de3e8be408a649144975b1f84bd9dbb4, type: 3}
       propertyPath: 'Levels.Array.data[1]'
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494744438716802313, guid: de3e8be408a649144975b1f84bd9dbb4, type: 3}
+      propertyPath: 'Levels.Array.data[2]'
+      value: Level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
