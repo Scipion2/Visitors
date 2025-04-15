@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
     
     [SerializeField] private Rigidbody2D CharacterBody;
     [SerializeField] private float JumpAnimDuration=0.6f;
-    [SerializeField] private float WalkSpeed=1f,Runfactor=2f,Jumpheigth=5f,MaxSpeed;
+    [SerializeField] private float WalkSpeed=1f,Runfactor=2f,Jumpheigth=5f,MaxSpeed=10;
     private bool isCharacterRunning=false,isCharacterJumping=false;
 
     //GETTERS

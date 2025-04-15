@@ -16659,6 +16659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob
       objectReference: {fileID: 0}
+    - target: {fileID: 5646183885712879412, guid: ea283a56832fdd54daecd65d0d2a64f7, type: 3}
+      propertyPath: isAutoMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5776375914423415422, guid: ea283a56832fdd54daecd65d0d2a64f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.17
