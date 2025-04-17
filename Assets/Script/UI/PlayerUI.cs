@@ -11,6 +11,7 @@ public class PlayerUI : MonoBehaviour
         [SerializeField] private LifeDisplay[] Lifes;
         [SerializeField] private Transform LifeContainer;
         [SerializeField] private Image TankBar;
+        [SerializeField] private GameObject TalkButton;
 
     //SETTERS
 
@@ -38,6 +39,8 @@ public class PlayerUI : MonoBehaviour
                 Lifes[i].Initialize(true);
 
             }
+
+            //DisplayTalkButton(false);
 
         }
 
@@ -93,6 +96,13 @@ public class PlayerUI : MonoBehaviour
                 }
 
             }
+
+        }
+
+        public void DisplayTalkButton(bool isDisplayable)
+        {
+
+            TalkButton.SetActive(isDisplayable);
 
         }
 

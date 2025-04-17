@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
         [SerializeField] private TipsWindow TipsWindowPrefab, CurrentTipsWindow;
         [SerializeField] private GameObject PauseWindowPrefab;
         [SerializeField] private GameObject CurrentPauseWindow;
+        [SerializeField] private DialogDisplayer DialogDisplayerPrefab;
+        [SerializeField] private DialogDisplayer CurrentDialogDisplayer;
 
     //GETTERS
 
@@ -36,7 +38,35 @@ public class UIManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
+        public void Start()
+        {
+
+            DisplayDialogDisplayer(false);
+
+        }
+
+
     //DISPLAYERS
+
+        public void DisplayDialogDisplayer(bool isDisplayable)
+        {
+
+
+            if(CurrentDialogDisplayer==null)
+            {
+
+                CurrentDialogDisplayer=Instantiate(DialogDisplayerPrefab,this.transform);
+
+            }
+
+            CurrentDialogDisplayer.gameObject.SetActive(isDisplayable);
+
+            if(isDisplayable)
+                Time.timeScale=0;
+            else
+                Time.timeScale=1;
+
+        }
 
         public void PauseWindowDisplay(bool isDisplayable)
         {
@@ -71,7 +101,7 @@ public class UIManager : MonoBehaviour
 
         }
 
-        private void DisplayPlayerUI(bool isDisplayable)
+        public void DisplayPlayerUI(bool isDisplayable)
         {
 
             if(CurrentPlayerUI==null)
@@ -143,6 +173,22 @@ public class UIManager : MonoBehaviour
         {
 
             CurrentPlayerUI.ClearUI();
+
+        }
+
+        public void DisplayTalkButton(bool isDisplayable)
+        {
+
+            CurrentPlayerUI.DisplayTalkButton(isDisplayable);
+
+        }
+
+    //DIALOG GESTURE
+
+        public void InitializeDialog(Message[] SRC)
+        {
+
+            CurrentDialogDisplayer.SetDialogToDisplay(SRC);
 
         }
 

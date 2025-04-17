@@ -98,6 +98,11 @@ GameObject:
   - component: {fileID: 7889649136805947583}
   - component: {fileID: 5995880566594949549}
   - component: {fileID: 1667022702908418779}
+  - component: {fileID: 7544992251632294689}
+  - component: {fileID: 2239650139145703105}
+  - component: {fileID: 8235064084656206027}
+  - component: {fileID: 6806162127850701938}
+  - component: {fileID: 7350460908801361398}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -198,3 +203,154 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7544992251632294689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824787496635469888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7261a365aad2b594591c4763e7d6288b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentLives: 0
+  MaxLives: 1
+  DeathAnimationTime: 0
+  CharacterControler: {fileID: 2239650139145703105}
+  NPCCollider: {fileID: 8235064084656206027}
+--- !u!114 &2239650139145703105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824787496635469888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105dce9aad2c6424980615c4955fcac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterAnimator: {fileID: 1667022702908418779}
+  CharacterMovement: {fileID: 6806162127850701938}
+  WalkSpeed: 0
+  RunSpeed: 0
+  RightUpLimit: {fileID: 0}
+  LeftDownLimit: {fileID: 0}
+  MoveDelta: 0.2
+  distance: 0
+  speed: 0.5
+  MoveRight: 1
+  isAutoMove: 1
+  isVerticalMove: 0
+--- !u!60 &8235064084656206027
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824787496635469888}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.36, y: 0.34}
+    newSize: {x: 0.36, y: 0.34}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.091173016, y: 0.09608401}
+      - {x: 0.054525375, y: 0.1336937}
+      - {x: 0.0060373694, y: 0.13593425}
+      - {x: -0.04630676, y: 0.13586032}
+      - {x: -0.090782166, y: 0.09210491}
+      - {x: -0.14051628, y: 0.09840107}
+      - {x: -0.16827933, y: 0.08}
+      - {x: -0.1659352, y: 0.011024209}
+      - {x: -0.09941673, y: -0.043100357}
+      - {x: -0.09124695, y: -0.10476314}
+      - {x: -0.05468826, y: -0.13718121}
+      - {x: 0.00014785677, y: -0.16531174}
+      - {x: 0.07117111, y: -0.12952533}
+      - {x: 0.095041275, y: -0.08623123}
+      - {x: 0.09940529, y: -0.040569305}
+      - {x: 0.16827933, y: 0.018130532}
+      - {x: 0.16476218, y: 0.07468922}
+      - {x: 0.1377298, y: 0.10014881}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6806162127850701938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824787496635469888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14fef2bff5ba524789cff0b89af8a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterBody: {fileID: 7350460908801361398}
+  JumpAnimDuration: 0.6
+  WalkSpeed: 1
+  Runfactor: 2
+  Jumpheigth: 5
+  MaxSpeed: 10
+--- !u!50 &7350460908801361398
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824787496635469888}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

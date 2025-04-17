@@ -87,4 +87,12 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
 
     }
 
+    public void Talk()
+    {
+
+        UIManager.instance.DisplayPlayerUI(false);
+        UIManager.instance.DisplayDialogDisplayer(true);
+
+    }
+
 }

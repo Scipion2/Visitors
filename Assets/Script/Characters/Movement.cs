@@ -20,6 +20,13 @@ public class Movement : MonoBehaviour
 
     }
 
+    public void VerticalMove(float Movement)
+    {
+
+        CharacterBody.linearVelocity=new Vector2(CharacterBody.linearVelocity.x,Mathf.Clamp(Movement*WalkSpeed, -MaxSpeed, MaxSpeed));
+
+    }
+
     public void Jump()
     {
 

@@ -12,7 +12,7 @@ public class Controler : MonoBehaviour
 
         [SerializeField] protected float WalkSpeed,RunSpeed;
         public const string ISDYING="isDying",ISHURTED="isHurted",ISMOVINGLEFT="isMovingLeft",ISMOVINGRIGHT="isMovingRight",
-                ISJUMPING="isJumping",ISATTACKING="isAttacking",ISIDLE="isIdle",ISINTERRACTING="isInterracting";
+                ISJUMPING="isJumping",ISATTACKING="isAttacking",ISIDLE="isIdle",ISINTERRACTING="isInterracting",ISMOVINGUP="isMovingUp",ISMOVINGDOWN="isMovingDown";
 
     //SETTERS
 

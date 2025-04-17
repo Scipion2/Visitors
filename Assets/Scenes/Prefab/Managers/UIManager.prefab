@@ -233,3 +233,7 @@ MonoBehaviour:
   LoseWindow: {fileID: 0}
   TipsWindowPrefab: {fileID: 343203934428043558, guid: a86d615c8cd20b44c89a26ce5104d105, type: 3}
   CurrentTipsWindow: {fileID: 0}
+  PauseWindowPrefab: {fileID: 4744076167784752351, guid: 8441a36b111885f48b8c44ba4923af74, type: 3}
+  CurrentPauseWindow: {fileID: 0}
+  DialogDisplayerPrefab: {fileID: 3529309281003932251, guid: 36a64ca2e00e60649a913fb7875d48c3, type: 3}
+  CurrentDialogDisplayer: {fileID: 0}
