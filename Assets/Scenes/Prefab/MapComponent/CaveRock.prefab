@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8752606959679668540}
+  - component: {fileID: 8235238292683768257}
   m_Layer: 0
   m_Name: CaveRock
   m_TagString: Untagged
@@ -31,3 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8235238292683768257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553762193115922788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01b8d467868ac64db43c6ace2a77153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RockSprites:
+  - {fileID: -4050710359956972958, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
+  - {fileID: 4694081222966674561, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
+  - {fileID: 2918963379169597025, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
