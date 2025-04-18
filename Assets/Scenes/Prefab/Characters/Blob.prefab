@@ -216,7 +216,7 @@ MonoBehaviour:
   WalkSpeed: 1
   Runfactor: 2
   Jumpheigth: 5
-  MaxSpeed: 10
+  MaxSpeed: 5
 --- !u!114 &341700116762460254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +250,11 @@ MonoBehaviour:
   CharacterMovement: {fileID: 5752172020657750689}
   WalkSpeed: 0
   RunSpeed: 0
-  RightLimit: {fileID: 0}
-  LeftLimit: {fileID: 0}
+  RightUpLimit: {fileID: 0}
+  LeftDownLimit: {fileID: 0}
   MoveDelta: 0.2
   distance: 0
-  speed: 0.3
+  speed: 1
   MoveRight: 1
   isAutoMove: 1
+  isVerticalMove: 0

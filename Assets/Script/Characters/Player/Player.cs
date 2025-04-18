@@ -28,7 +28,7 @@ public class Player : Character
             case DamageType.Base :
 
                 if(LowerState())
-                    UpdateData();
+                    TakeDamage(DamageType.Lethal);
 
                 break;
 
@@ -64,7 +64,7 @@ public class Player : Character
     private bool LowerState()
     {
 
-        LoseLive(1);
+        //LoseLive(1);
         return true;
 
     }
