@@ -26,11 +26,24 @@ public class Level : MonoBehaviour
 
             LevelManager.instance.SetCurrentSpawn(Spawn);
             LevelManager.instance.SetLevelDatas(this);
-            EventManager.instance.CheckPointEvent.AddListener(UpdateCheckPoint);
 
         }
 
-        public void UpdateCheckPoint(int CheckPointIndex)
+    public void OnEnable()
+    {
+        
+        EventManager.instance.CheckPointEvent.AddListener(UpdateCheckPoint);
+
+    }
+
+    public void OnDisable()
+    {
+        
+        EventManager.instance.CheckPointEvent.RemoveListener(UpdateCheckPoint);
+
+    }
+
+    public void UpdateCheckPoint(int CheckPointIndex)
         {
 
             if(CheckPointIndex>CurrentCheckPoint)

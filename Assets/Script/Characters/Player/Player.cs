@@ -12,10 +12,17 @@ public class Player : Character
     //ESSENTIALS
     
 
-    public void Start()
+    public void OnEnable()
     {
 
         EventManager.instance.DarkMaterialEvent.AddListener(AddDarkMaterial);
+
+    }
+
+    public void OnDisable()
+    {
+        
+        EventManager.instance.DarkMaterialEvent.RemoveListener(AddDarkMaterial);
 
     }
 

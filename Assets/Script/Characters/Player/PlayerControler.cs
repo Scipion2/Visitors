@@ -22,12 +22,25 @@ public class PlayerControler : Controler
     //GETTERS
 
     //ESSENTIALS
-    
 
-        public void Start()
+
+    public void OnEnable()
+    {
+        
+        EventManager.instance.JumpEvent.AddListener(Jump);
+
+    }
+
+    public void OnDisable()
+    {
+
+        EventManager.instance.JumpEvent.RemoveListener(Jump);
+
+    }
+
+    public void Start()
         {
 
-            EventManager.instance.JumpEvent.AddListener(Jump);
             AttackAction=InputSystem.actions.FindAction("Attack");
             MoveAction=InputSystem.actions.FindAction("GyroMove");
             GroundChecker.onLineCastHit2D.AddListener(GroundCheck);

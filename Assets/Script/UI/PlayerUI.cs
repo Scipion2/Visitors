@@ -19,14 +19,21 @@ public class PlayerUI : MonoBehaviour
 
     //ESSENTIALS
 
-        public void Awake()
+        public void OnEnable()
         {
 
             EventManager.instance.DarkMaterialEvent.AddListener(UpdateTank);
 
         }
 
-        public void Initialize(int LifeNumber)
+    public void OnDisable()
+    {
+        
+        EventManager.instance.DarkMaterialEvent.RemoveListener(UpdateTank);
+
+    }
+
+    public void Initialize(int LifeNumber)
         {
 
             Lifes=new LifeDisplay[LifeNumber];
