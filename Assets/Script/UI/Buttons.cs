@@ -95,4 +95,11 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
 
     }
 
+    public void NextWorld()
+    {
+
+        GameManager.instance.NextLevel();
+
+    }
+
 }

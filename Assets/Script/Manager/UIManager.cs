@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
         [SerializeField] private GameObject CurrentPauseWindow;
         [SerializeField] private DialogDisplayer DialogDisplayerPrefab;
         [SerializeField] private DialogDisplayer CurrentDialogDisplayer;
+        [SerializeField] private GameObject WinningWindowPrefab;
+        [SerializeField] private GameObject CurrentWinningWindow;
 
     //GETTERS
 
@@ -47,6 +49,20 @@ public class UIManager : MonoBehaviour
 
 
     //DISPLAYERS
+
+        public void DisplayWinningWindow(bool isDisplayable)
+        {
+
+            if(CurrentWinningWindow==null)
+            {
+
+                CurrentWinningWindow=Instantiate(WinningWindowPrefab,UIDisplayer);
+
+            }
+
+            CurrentWinningWindow.SetActive(isDisplayable);
+
+        }
 
         public void DisplayDialogDisplayer(bool isDisplayable)
         {

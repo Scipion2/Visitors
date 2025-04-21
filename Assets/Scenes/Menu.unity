@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: InfoDisplayerPrefab
       value: 
       objectReference: {fileID: 7715047709246317702, guid: e8da8bbfde6d5ee45acaf0cfc97428a6, type: 3}
+    - target: {fileID: 3235277359832182295, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
+      propertyPath: WinningWindowPrefab
+      value: 
+      objectReference: {fileID: 8150661949123951718, guid: b502c495c1bd2e043b1ab663a1e356af, type: 3}
     - target: {fileID: 4132885116471050380, guid: 7fe0ba0b3b063374294977c8c4cae2b6, type: 3}
       propertyPath: m_RenderMode
       value: 1

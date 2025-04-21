@@ -237,3 +237,5 @@ MonoBehaviour:
   CurrentPauseWindow: {fileID: 0}
   DialogDisplayerPrefab: {fileID: 3529309281003932251, guid: 36a64ca2e00e60649a913fb7875d48c3, type: 3}
   CurrentDialogDisplayer: {fileID: 0}
+  WinningWindowPrefab: {fileID: 8150661949123951718, guid: b502c495c1bd2e043b1ab663a1e356af, type: 3}
+  CurrentWinningWindow: {fileID: 0}

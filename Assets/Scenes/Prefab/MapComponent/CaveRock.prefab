@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8752606959679668540}
   - component: {fileID: 8235238292683768257}
+  - component: {fileID: 3137055699354962650}
   m_Layer: 0
   m_Name: CaveRock
   m_TagString: Untagged
@@ -44,7 +45,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01b8d467868ac64db43c6ace2a77153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RockSprites:
-  - {fileID: -4050710359956972958, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
-  - {fileID: 4694081222966674561, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
-  - {fileID: 2918963379169597025, guid: ce30cf1a5810f554683780c6723eb003, type: 3}
+  RockType:
+  - {fileID: 1482703487874090247, guid: d1385516c79c46c498de10926295bae5, type: 3}
+  - {fileID: 7276902291344501424, guid: 352147978e0c0bf4595146a3094b6886, type: 3}
+  - {fileID: 7638237951273656099, guid: 8936feab5fae30d498279ce71b44741e, type: 3}
+  RockBody: {fileID: 3137055699354962650}
+--- !u!50 &3137055699354962650
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553762193115922788}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

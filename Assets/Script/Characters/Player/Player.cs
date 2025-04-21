@@ -92,7 +92,7 @@ public class Player : Character
         {
 
             TankCapacityFilled=1;
-            GameManager.instance.NextLevel();
+            GameManager.instance.WinLevel();
 
         }
 

@@ -50,6 +50,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void WinLevel()
+    {
+
+        UIManager.instance.DisplayWinningWindow(true);
+        UIManager.instance.DisplayPlayerUI(false);
+        LevelManager.instance.UnlockNextLevel();
+
+    }
+
 
     public void SpawnPlayer()
     {
@@ -66,6 +75,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.DisplayLoseWindow(true);
         UIManager.instance.EmptyAll();
+        UIManager.instance.DisplayPlayerUI(false);
 
     }
 

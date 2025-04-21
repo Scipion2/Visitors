@@ -69,10 +69,17 @@ public class LevelManager : MonoBehaviour
 
         }
 
-        public void GoToNextLevel()
+        public void UnlockNextLevel()
         {
 
             CurrentLevel++;
+
+        }
+
+        public void GoToNextLevel()
+        {
+
+            
             if(CurrentLevel>CurrentMaxLevel)
             {
 
