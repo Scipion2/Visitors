@@ -12,14 +12,24 @@ public class DeadZone : MonoBehaviour
             Player temp=other.gameObject.GetComponent<Player>();
             temp.TakeDamage(Character.DamageType.Lethal);
 
-        }
-
-        if(other.gameObject.tag=="NPC")
+        }else if(other.gameObject.tag=="NPC")
         {
 
             other.gameObject.GetComponent<NPC>().TakeDamage(Character.DamageType.Final);
 
+        }else if(other.gameObject.tag=="Ground")
+        {
+
+            //
+
+        }else
+        {
+
+            other.gameObject.SetActive(false);
+
         }
+
+        
 
     }
 

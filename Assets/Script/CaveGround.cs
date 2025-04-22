@@ -19,9 +19,14 @@ public class CaveGround : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         
-        GroundAnimator.SetBool("isShaking",true);
-        Invoke("Fall",FallDelay);
+        if(collision.collider.gameObject.tag!="CaveGround")
+        {
 
+            GroundAnimator.SetBool("isShaking",true);
+            Invoke("Fall",FallDelay);
+
+        }
+        
     }
 
     private void Fall()

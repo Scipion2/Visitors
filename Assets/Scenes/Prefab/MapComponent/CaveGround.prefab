@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3209345646914961361}
   m_Layer: 0
   m_Name: CaveGround
-  m_TagString: Untagged
+  m_TagString: CaveGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
