@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Android;
 
 public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
 {
@@ -68,7 +69,10 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     public void Play()
     {
 
-        GameManager.instance.Play();
+        if(CheckPerm())
+            GameManager.instance.Play();
+        else
+            Debug.Log("Pas de perm, pas de chocolat");
 
     }
 
@@ -99,6 +103,20 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     {
 
         GameManager.instance.NextLevel();
+
+    }
+
+    private bool CheckPerm()
+    {
+
+        if(!Permission.HasUserAuthorizedPermission("android.hardware.Sensor.STRING_TYPE_ACCELEROMETER"))
+        {
+
+            Permission.RequestUserPermission("android.hardware.Sensor.STRING_TYPE_ACCELEROMETER");
+
+        }
+
+        return true;
 
     }
 
