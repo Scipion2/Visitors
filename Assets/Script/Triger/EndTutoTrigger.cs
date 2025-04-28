@@ -7,7 +7,7 @@ public class EndTutoTrigger : EventTriger
     public void Awake()
     {
         
-        Message="Well done <color=blue>Visitor</color>!\nYou end your training here.";
+        Message="Well done <color=blue>Visitor</color>!\nYour training end here.";
 
     }
 

@@ -109,14 +109,16 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     private bool CheckPerm()
     {
 
-        if(!Permission.HasUserAuthorizedPermission("android.hardware.Sensor.STRING_TYPE_ACCELEROMETER"))
+        if(!Permission.HasUserAuthorizedPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS"))
         {
 
-            Permission.RequestUserPermission("android.hardware.Sensor.STRING_TYPE_ACCELEROMETER");
+            Permission.RequestUserPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS");
 
         }
 
-        return true;
+        UIManager.instance.DisplayTipWindow("perm checked");
+
+        return Permission.HasUserAuthorizedPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS");
 
     }
 

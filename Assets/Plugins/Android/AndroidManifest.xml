@@ -8,7 +8,7 @@
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
     <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="true"/>
 
-        <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
 
     <application>
         <!--Used when Application Entry is set to Activity, otherwise remove this activity block-->
