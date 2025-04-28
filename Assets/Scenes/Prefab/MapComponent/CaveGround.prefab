@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4612973971389241943}
   - component: {fileID: 8953929451917763071}
   - component: {fileID: -3209345646914961361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CaveGround
   m_TagString: CaveGround
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundAnimator: {fileID: -3209345646914961361}
   GroundBody: {fileID: 8953929451917763071}
-  FallDelay: 3
+  FallDelay: 20
   Origin: {x: 0, y: 0, z: 0}
 --- !u!50 &8953929451917763071
 Rigidbody2D:
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!95 &-3209345646914961361
 Animator:
   serializedVersion: 7
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 5815684737759850314}
   - component: {fileID: 7892434996116549432}
   - component: {fileID: 1882487299697759242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 7310779974447879176}
   - component: {fileID: 7774679278734774581}
   - component: {fileID: 7419134768417977857}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_57 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 1050825154547810162}
   - component: {fileID: 4950411842984772575}
   - component: {fileID: 3874104512065002049}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 9153762851262474032}
   - component: {fileID: 2476801738887290957}
   - component: {fileID: 7378495801915439887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}

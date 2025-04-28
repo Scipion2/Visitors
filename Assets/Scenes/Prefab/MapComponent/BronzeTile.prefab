@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3863509086388218044}
   - component: {fileID: 6537144259589509775}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839280474489058206}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BronzeTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8539116583205557901}
   - component: {fileID: 5525381814509675215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3108230121769615266}
   - component: {fileID: 8762746106786043458}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5587077232406914184}
   - component: {fileID: 2820914108597304929}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6504172865755360311}
   - component: {fileID: 8878654730769440295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025422436922393865}
   - component: {fileID: 1975715296837810889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_139
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5141011424926546531}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: OrangeBloc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8590199826275107357}
   - component: {fileID: 8061677004351123493}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_125
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5911926955225835006}
   - component: {fileID: 3997371784780552665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_138
   m_TagString: Untagged
   m_Icon: {fileID: 0}

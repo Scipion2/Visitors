@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8072047076975042994}
   - component: {fileID: 4868467669333642855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_141
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5835949224737485972}
   - component: {fileID: 8078045405365497026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_130
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366510030568641565}
   - component: {fileID: 2159275403487356140}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_142
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5244769572571603537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GoldBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3405827676259220329}
   - component: {fileID: 6470910637028726136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain (16x16)_129
   m_TagString: Untagged
   m_Icon: {fileID: 0}
