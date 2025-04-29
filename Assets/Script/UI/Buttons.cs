@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
+using UnityEngine.InputSystem;
 
 public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
 {
@@ -33,6 +34,7 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     public void Quit()
     {
 
+        InputSystem.DisableDevice(Accelerometer.current);
         Application.Quit();
 
     }
@@ -69,10 +71,7 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     public void Play()
     {
 
-        if(CheckPerm())
-            GameManager.instance.Play();
-        else
-            Debug.Log("Pas de perm, pas de chocolat");
+        GameManager.instance.Play();
 
     }
 
@@ -103,22 +102,6 @@ public class Buttons : Button, IPointerUpHandler, IPointerDownHandler
     {
 
         GameManager.instance.NextLevel();
-
-    }
-
-    private bool CheckPerm()
-    {
-
-        if(!Permission.HasUserAuthorizedPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS"))
-        {
-
-            Permission.RequestUserPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS");
-
-        }
-
-        UIManager.instance.DisplayTipWindow("perm checked");
-
-        return Permission.HasUserAuthorizedPermission("android.permission.HIGH_SAMPLING_RATE_SENSORS");
 
     }
 

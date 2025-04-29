@@ -22,7 +22,7 @@ public class CaveGround : MonoBehaviour
         if(collision.collider.gameObject.tag!="CaveGround")
         {
 
-            GroundAnimator.SetBool("isShaking",true);
+            //GroundAnimator.SetBool("isShaking",true);
             Invoke("Fall",FallDelay);
 
         }

@@ -22,6 +22,11 @@ public class DeadZone : MonoBehaviour
 
             //
 
+        }else if(other.gameObject.tag=="Destroyable")
+        {
+
+            Destroy(other.gameObject);
+
         }else
         {
 

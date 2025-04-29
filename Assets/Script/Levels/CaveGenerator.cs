@@ -11,6 +11,7 @@ public class CaveGenerator : MonoBehaviour
     [SerializeField] private float CaveGroundLength;
     [SerializeField] private List<CaveGround> GroundComponent=new List<CaveGround>();
     [SerializeField] private Transform UpperRightLimit,UpperLeftLimit,LowerRightLimit,LowerLeftLimit;
+    private int CaveFloorStages=5;
 
     public void OnEnable()
     {
@@ -42,13 +43,18 @@ public class CaveGenerator : MonoBehaviour
     {
 
         float y=UpperLeftLimit.position.y;
-
-        for(float i=UpperLeftLimit.position.x; i<=UpperRightLimit.position.x;i+=CaveRockLength)
+        for(;y<UpperLeftLimit.position.y+CaveFloorStages*CaveRockLength;y+=CaveRockLength)
         {
 
-            CaveRock Temp=Instantiate(CaveRockPrefab,this.transform);
-            Temp.transform.position=new Vector3(i,y,0);
-            FloorComponent.Add(Temp);
+            for(float x=UpperLeftLimit.position.x-CaveRockLength; x<=UpperRightLimit.position.x+CaveRockLength;x+=CaveRockLength)
+            {
+
+                CaveRock Temp=Instantiate(CaveRockPrefab,this.transform);
+                Temp.transform.position=new Vector3(x,y,0);
+                FloorComponent.Add(Temp);
+
+            }
+
 
         }
 

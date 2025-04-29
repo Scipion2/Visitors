@@ -7,6 +7,7 @@ public class EventTriger : MonoBehaviour
     [Space(2)]
 
         [SerializeField] protected string Message;
+        [SerializeField] protected float EventDelay=5f;
         private bool isAlreadyTrigered=false;
 
     //ESSENTIALS
@@ -21,9 +22,15 @@ public class EventTriger : MonoBehaviour
                 {
 
                     isAlreadyTrigered=true;
-                    Time.timeScale=0;
-                    UIManager.instance.DisplayTipWindow(Message);
-                    Invoke("Event",5f);
+                    
+                    if(SettingsManager.instance.GetTipsDisplay())
+                    {
+
+                        Time.timeScale=0;
+                        UIManager.instance.DisplayTipWindow(Message);
+
+                    }
+                    Invoke("Event",EventDelay);
 
                 }
                 

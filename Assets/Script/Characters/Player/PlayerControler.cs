@@ -1,17 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
 public class PlayerControler : Controler
 {
     
     [Header("Datas")]
 
-        InputAction AttackAction,MoveAction;
-        private float RotateMargin=0.2f,RayRange=0.5f;
+        InputAction MoveAction;
         [SerializeField] private LayerMask GroundLayerMask;
         [SerializeField] private bool isGrounded=true;
-        private bool GyroChecked=false;
 
     [Header("Components")]
 
@@ -28,6 +25,7 @@ public class PlayerControler : Controler
     {
         
         EventManager.instance.JumpEvent.AddListener(Jump);
+        GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
 
     }
 
@@ -35,30 +33,19 @@ public class PlayerControler : Controler
     {
 
         EventManager.instance.JumpEvent.RemoveListener(Jump);
+        GroundChecker.onLineCastHit2D.RemoveListener(GroundCheck);
 
     }
 
     public void Start()
-        {
+    {
 
-            AttackAction=InputSystem.actions.FindAction("Attack");
-            MoveAction=InputSystem.actions.FindAction("GyroMove");
-            GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
-            
-            
-            
+        MoveAction=InputSystem.actions.FindAction("GyroMove"); 
 
-        }
+    }
 
         public void Update()
         {
-            
-            if(AttackAction.IsPressed())
-            {
-
-                UpdateAnimation(ISATTACKING);
-
-            }
 
 
             float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x;

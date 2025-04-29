@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
         {
 
             PlayerPrefs.DeleteAll();
+            CurrentMaxLevel=0;
 
         }
 

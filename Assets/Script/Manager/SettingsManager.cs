@@ -3,6 +3,14 @@ using UnityEngine;
 public class SettingsManager : MonoBehaviour
 {
     
+    private bool TipsDisplay=true;
+
+    //SETTERS
+
+    //GETTERS
+
+        public bool GetTipsDisplay(){return TipsDisplay;}
+
     public static SettingsManager instance;
     private void Awake()
     {
@@ -16,6 +24,13 @@ public class SettingsManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void SwitchTipsDisplay()
+    {
+
+        TipsDisplay=!TipsDisplay;
+
     }
 
 }

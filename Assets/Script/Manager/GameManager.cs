@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,13 @@ public class GameManager : MonoBehaviour
             }
             DontDestroyOnLoad(this.gameObject);
         }
+
+    public void Start()
+    {
+        
+        InputSystem.EnableDevice(Accelerometer.current);
+
+    }
 
     //
 

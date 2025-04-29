@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundAnimator: {fileID: -3209345646914961361}
   GroundBody: {fileID: 8953929451917763071}
-  FallDelay: 20
+  FallDelay: 5
   Origin: {x: 0, y: 0, z: 0}
 --- !u!50 &8953929451917763071
 Rigidbody2D:
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 5
 --- !u!95 &-3209345646914961361
 Animator:
   serializedVersion: 7
