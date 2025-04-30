@@ -55,7 +55,8 @@ public class LevelManager : MonoBehaviour
         public void ResetSave()
         {
 
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteKey("MaxLevel");
             CurrentMaxLevel=0;
 
         }
@@ -97,6 +98,7 @@ public class LevelManager : MonoBehaviour
         {
 
             CurrentSpawn=LevelDatas.Reset();
+            Launch();
 
         }
 

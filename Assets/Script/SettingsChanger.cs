@@ -1,7 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsChanger : MonoBehaviour
 {
+
+    [SerializeField] private Toggle TipsDisplay;
+
+    public void Awake()
+    {
+
+        TipsDisplay.isOn=SettingsManager.instance.GetTipsDisplay();
+
+    }
     
     public void ChangeTipsDisplay()
     {
@@ -16,5 +26,6 @@ public class SettingsChanger : MonoBehaviour
         LevelManager.instance.ResetSave();
 
     }
+
 
 }

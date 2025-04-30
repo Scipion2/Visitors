@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
         [SerializeField] private Transform Spawn;
         [SerializeField] private Transform[] CheckPoints;
         [SerializeField] private GameObject[] ObjectOnLevel;
+        [SerializeField] private AudioClip LevelMusic;
         
     [Header("Level Datas")]
     [Space(2)]
@@ -33,6 +34,7 @@ public class Level : MonoBehaviour
     {
         
         EventManager.instance.CheckPointEvent.AddListener(UpdateCheckPoint);
+        AudioManager.instance.SetAmbiantMusic(LevelMusic);
 
     }
 

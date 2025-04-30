@@ -25427,6 +25427,7 @@ MonoBehaviour:
   - {fileID: 515447624}
   - {fileID: 1083810407}
   - {fileID: 629604914}
+  LevelMusic: {fileID: 8300000, guid: b1e822a58e250954f8609b6954373b9f, type: 3}
 --- !u!4 &2071901044
 Transform:
   m_ObjectHideFlags: 0

@@ -21,45 +21,47 @@ public class PlayerControler : Controler
     //ESSENTIALS
 
 
-    public void OnEnable()
-    {
-        
-        EventManager.instance.JumpEvent.AddListener(Jump);
-        GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
+        public void OnEnable()
+        {
+            
+            EventManager.instance.JumpEvent.AddListener(Jump);
+            GroundChecker.onLineCastHit2D.AddListener(GroundCheck);
 
-    }
+        }
 
-    public void OnDisable()
-    {
+        public void OnDisable()
+        {
 
-        EventManager.instance.JumpEvent.RemoveListener(Jump);
-        GroundChecker.onLineCastHit2D.RemoveListener(GroundCheck);
+            EventManager.instance.JumpEvent.RemoveListener(Jump);
+            GroundChecker.onLineCastHit2D.RemoveListener(GroundCheck);
 
-    }
+        }
 
-    public void Start()
-    {
+        public void Start()
+        {
 
-        MoveAction=InputSystem.actions.FindAction("GyroMove"); 
+            MoveAction=InputSystem.actions.FindAction("GyroMove"); 
 
-    }
+        }
 
         public void Update()
         {
 
 
             float AngularMobileMovement=MoveAction.ReadValue<Vector3>().x;
-            CharacterMovement.Move(AngularMobileMovement);
+            //CharacterMovement.Move(AngularMobileMovement);
 
-            if(AngularMobileMovement>0.05)
+            if(AngularMobileMovement>0.1)
             {
 
                 UpdateAnimation(ISMOVINGRIGHT);
+                CharacterMovement.Move(AngularMobileMovement);
 
-            }else if(AngularMobileMovement<-0.05)
+            }else if(AngularMobileMovement<-0.1)
             {
 
                 UpdateAnimation(ISMOVINGLEFT);
+                CharacterMovement.Move(AngularMobileMovement);
 
             }else
             {

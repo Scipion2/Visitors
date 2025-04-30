@@ -26,7 +26,7 @@ public class EventTriger : MonoBehaviour
                     if(SettingsManager.instance.GetTipsDisplay())
                     {
 
-                        Time.timeScale=0;
+                        Time.timeScale=0.3f;
                         UIManager.instance.DisplayTipWindow(Message);
 
                     }

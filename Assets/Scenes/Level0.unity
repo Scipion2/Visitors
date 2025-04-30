@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Message: 
+  EventDelay: 5
 --- !u!61 &101668924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -432,6 +433,7 @@ MonoBehaviour:
   ObjectOnLevel:
   - {fileID: 6599091990170551952}
   - {fileID: 3181098303077163332}
+  LevelMusic: {fileID: 8300000, guid: 152ac3aee6ced2a438b1d8598414f7fc, type: 3}
 --- !u!4 &429943536
 Transform:
   m_ObjectHideFlags: 0
@@ -16691,6 +16693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Message: 
+  EventDelay: 5
   TutoBlob: {fileID: 0}
 --- !u!61 &929120382
 BoxCollider2D:
@@ -16845,6 +16848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Message: 
+  EventDelay: 5
 --- !u!1 &1186617296
 GameObject:
   m_ObjectHideFlags: 0
@@ -17150,6 +17154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Message: 
+  EventDelay: 5
 --- !u!1 &1728332250
 GameObject:
   m_ObjectHideFlags: 0
