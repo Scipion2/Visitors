@@ -15,7 +15,7 @@ public class ScrollBar : MonoBehaviour
 
         slider.value=AudioManager.instance.GetAudioData(AudioToChange);
         IsOn.isOn=slider.value!=0;
-        Label.text=slider.value.ToString()+"%";
+        Label.text=(slider.value*100).ToString()+"%";
 
     }
 
@@ -60,7 +60,7 @@ public class ScrollBar : MonoBehaviour
     {
 
         AudioManager.instance.UpdateVolume(AudioToChange,IsOn.isOn,slider.value);
-        Label.text=slider.value.ToString()+"%";
+        Label.text=(slider.value*100).ToString()+"%";
 
     }
 

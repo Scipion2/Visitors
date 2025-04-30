@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 657491696}
   IsOn: {fileID: 1995836302}
-  AudioToChange: 0
+  AudioToChange: 1
   Label: {fileID: 1047604158}
 --- !u!114 &657491696
 MonoBehaviour:
@@ -1345,9 +1345,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1887878195}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3575,9 +3575,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 510164740}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1612211840}
         m_TargetAssemblyTypeName: ScrollBar, Assembly-CSharp
         m_MethodName: OnSwitch
         m_Mode: 1
@@ -4973,7 +4973,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 657491695}
         m_TargetAssemblyTypeName: ScrollBar, Assembly-CSharp
         m_MethodName: OnSwitch
         m_Mode: 1
